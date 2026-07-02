@@ -4,10 +4,6 @@ from services import apply_coupon
 
 coupon_bp = Blueprint("coupon", __name__)
 
-
-# ----------------------------
-# Validate Coupon API
-# ----------------------------
 @coupon_bp.route("/validate-coupon", methods=["POST"])
 def validate_coupon():
 
@@ -45,10 +41,6 @@ def validate_coupon():
         "final_amount": 0
     })
 
-
-# ----------------------------
-# Apply Coupon API
-# ----------------------------
 @coupon_bp.route("/apply-coupon", methods=["POST"])
 def apply_coupon_route():
 
