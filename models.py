@@ -1,31 +1,19 @@
 from database import db
 from datetime import datetime
 
-
-# ----------------------------
-# User Table
-# ----------------------------
 class User(db.Model):
     __tablename__ = "users"
 
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(100), nullable=False)
 
-
-# ----------------------------
-# Coupon Table
-# ----------------------------
 class Coupon(db.Model):
     __tablename__ = "coupons"
 
     id = db.Column(db.Integer, primary_key=True)
     code = db.Column(db.String(50), unique=True, nullable=False)
     active = db.Column(db.Boolean, default=True)
-
-
-# ----------------------------
-# Coupon Usage Table
-# ----------------------------
+    
 class CouponUsage(db.Model):
     __tablename__ = "coupon_usage"
 
@@ -44,10 +32,6 @@ class CouponUsage(db.Model):
         ),
     )
 
-
-# ----------------------------
-# Transaction Table
-# ----------------------------
 class Transaction(db.Model):
     __tablename__ = "transactions"
 
